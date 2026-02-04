@@ -9,7 +9,7 @@ class wrapper :
     def __init__(self ) : 
         try :
             self.process = subprocess.Popen(
-                ["../cpp_core/sentinel"],
+                ["../c_core/sentinel"],
                 stdin = subprocess.PIPE , 
                 stdout = subprocess.PIPE , 
                 text = True ,
@@ -17,7 +17,7 @@ class wrapper :
             )
         except FileNotFoundError as e : 
             print(f"Erreur , l'executable n'est pas trouver {e}")
-        exit(1)
+        
 
     def check_url(self , url) :
         try :
