@@ -5,6 +5,7 @@ import os #pour naviguer vers l'excutable sentinel
 import subprocess 
 #permet de gerer les process 
 class wrapper : 
+
     def __init__(self ) : 
         try :
             self.process = subprocess.Popen(
@@ -18,20 +19,20 @@ class wrapper :
             print(f"Erreur , l'executable n'est pas trouver {e}")
         exit(1)
 
-def check_url(self , url) :
-    try :
-        self.process.stdin.write(url + "\n")
-        self.process.stdin.flush()  #envoyer les donnees directement 
+    def check_url(self , url) :
+        try :
+            self.process.stdin.write(url + "\n")
+            self.process.stdin.flush()  #envoyer les donnees directement 
 
-        #maintenat on it la reponse 
+            #maintenat on it la reponse 
 
-        response = self.process.stdout.readline().strip()
+            response = self.process.stdout.readline().strip()
 
-        return response #on a la reponse sans le n de fin de phrase 
-    except Exception as e : 
-        print(f"Erreur de type {e}")
-        return None 
-    
-    def close(self) :
-        self.process.terminate() #tue directement tous les process 
+            return response #on a la reponse sans le n de fin de phrase 
+        except Exception as e : 
+            print(f"Erreur de type {e}")
+            return None 
         
+        def close(self) :
+            self.process.terminate() #tue directement tous les process 
+
